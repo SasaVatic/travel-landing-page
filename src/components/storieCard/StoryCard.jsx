@@ -1,4 +1,3 @@
-import React from 'react';
 import './StoryCard.scss';
 
 export default function StorieCard(props) {

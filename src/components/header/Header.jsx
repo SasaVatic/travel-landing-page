@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import Navbar from '../navbar/Navbar';
 import './Header.scss';
 import gsap from 'gsap';

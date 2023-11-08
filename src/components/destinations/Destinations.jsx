@@ -1,9 +1,8 @@
-import React from 'react';
 import './Destinations.scss';
 import StoryCard from '../storieCard/StoryCard';
-import CardImageOne from '../../assets/img/destinations/destination_1.png'
-import CardImageTwo from '../../assets/img/destinations/destination_2.png'
-import CardImageThree from '../../assets/img/destinations/destination_3.png'
+import CardImageOne from '../../assets/img/destinations/destination_1.png';
+import CardImageTwo from '../../assets/img/destinations/destination_2.png';
+import CardImageThree from '../../assets/img/destinations/destination_3.png';
 
 export default function Destinations() {
   const destinationsData = {
@@ -36,12 +35,7 @@ export default function Destinations() {
   };
 
   const destinationCards = destinationsData.cards.map((card, index) => (
-    <StoryCard
-      img={card.img}
-      title={card.title}
-      text={card.text}
-      key={index}
-    />
+    <StoryCard img={card.img} title={card.title} text={card.text} key={index} />
   ));
 
   return (

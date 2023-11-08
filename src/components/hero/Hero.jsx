@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import './Hero.scss';
 import gsap from 'gsap';
 import HeroImage from '../../assets/img/hero/hero_img.png';

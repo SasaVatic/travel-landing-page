@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import './Places.scss';
 import AirplaneIcon from '../../assets/img/places/airplane_icon.png';
 import PlacesImageOne from '../../assets/img/places/places_1.png';
