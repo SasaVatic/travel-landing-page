@@ -57,7 +57,7 @@
   display: inline-block;
   font-weight: 900;
   text-transform: capitalize;
-  color: var(--clr-neutral-100);
+  color: var(--clr-text-light);
   background: linear-gradient(to right, var(--clr-primary), var(--clr-primary));
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -115,7 +115,7 @@
   border-color: var(--clr-primary);
 
   &:hover {
-    color: var(--clr-neutral-100);
+    color: var(--clr-text-light);
     box-shadow: 5px -5px 10px 0 rgba(0, 0, 0, 0.4);
   }
 
@@ -126,18 +126,18 @@
 
 @mixin cta-bordered-light {
   @extend %cta-bordered;
-  color: var(--clr-neutral-100);
+  color: var(--clr-text-light);
   background-color: var;
-  border-color: var(--clr-neutral-100);
+  border-color: var(--clr-text-light);
 
   &:hover {
     color: var(--clr-primary);
-    border-color: var(--clr-neutral-100);
+    border-color: var(--clr-text-light);
     box-shadow: 5px -5px 15px 0 rgba(255, 255, 255, 0.2);
   }
 
   &::before {
-    background-color: var(--clr-neutral-100);
+    background-color: var(--clr-text-light);
   }
 }
 

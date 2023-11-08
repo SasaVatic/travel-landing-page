@@ -91,6 +91,8 @@ body {
 }
 
 .paragraph {
+  text-align: justify;
+
   @include mq.media-breakpoint-between(xs, md) {
     line-height: 1.5;
   }

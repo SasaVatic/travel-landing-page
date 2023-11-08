@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import './Hero.scss';
 import gsap from 'gsap';
+import HeroImage from '../../assets/img/hero/hero_img.png';
 
 export default function Hero() {
   const heroTextContent = useRef(null);
@@ -10,7 +11,7 @@ export default function Hero() {
     text: 'Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus pendisse ultrices gravida.',
     ctaTxt: 'reserve ticket',
     img: {
-      url: 'src/assets/img/hero/hero_img.png',
+      url: HeroImage,
       altTxt: 'Green hills with little lake in the middle',
     },
   };

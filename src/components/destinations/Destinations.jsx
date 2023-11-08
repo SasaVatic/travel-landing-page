@@ -1,13 +1,16 @@
 import React from 'react';
 import './Destinations.scss';
 import StoryCard from '../storieCard/StoryCard';
+import CardImageOne from '../../assets/img/destinations/destination_1.png'
+import CardImageTwo from '../../assets/img/destinations/destination_2.png'
+import CardImageThree from '../../assets/img/destinations/destination_3.png'
 
 export default function Destinations() {
   const destinationsData = {
     cards: [
       {
         img: {
-          url: 'src/assets/img/destinations/destination_1.png',
+          url: CardImageOne,
           alt: 'Hiker with stick standing on the cliff',
         },
         title: 'Lorem ipsum dolor sit amet',
@@ -15,7 +18,7 @@ export default function Destinations() {
       },
       {
         img: {
-          url: 'src/assets/img/destinations/destination_2.png',
+          url: CardImageTwo,
           alt: 'Rocky Mountain Peak',
         },
         title: 'Lorem ipsum dolor sit amet',
@@ -23,7 +26,7 @@ export default function Destinations() {
       },
       {
         img: {
-          url: 'src/assets/img/destinations/destination_3.png',
+          url: CardImageThree,
           alt: 'Hiker sitting on a cliff with view on mountains in front of him',
         },
         title: 'Lorem ipsum dolor sit amet',
