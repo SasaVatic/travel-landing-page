@@ -1,0 +1,59 @@
+@use './media-queries' as mq;
+
+.fw-light {
+  font-weight: var(--fw-light);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-black {
+  font-weight: var(--fw-black);
+}
+
+.fs-heading-primary {
+  @include mq.media-breakpoint-between(xs, md) {
+    font-size: 2.8125rem;
+  }
+
+  @include mq.media-breakpoint-between(md, xl) {
+    font-size: 4.0625rem;
+  }
+
+  @include mq.media-breakpoint-up(xl) {
+    font-size: 5.3125rem;
+  }
+}
+
+.fs-heading-small {
+  @include mq.media-breakpoint-between(xs, md) {
+    font-size: 2.25rem;
+  }
+
+  @include mq.media-breakpoint-between(md, xl) {
+    font-size: 2.875rem;
+  }
+
+  @include mq.media-breakpoint-up(xl) {
+    font-size: 3.5rem;
+  }
+}
+
+.fs-base {
+  @include mq.media-breakpoint-between(xs, md) {
+    font-size: var(--fs-200);
+  }
+
+  @include mq.media-breakpoint-between(md, xl) {
+    font-size: var(--fs-300);
+  }
+
+  @include mq.media-breakpoint-up(xl) {
+    font-size: var(--fs-400);
+  }
+}

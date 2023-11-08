@@ -1,0 +1,310 @@
+.places {
+  text-align: center;
+
+  &__container {
+    position: relative;
+    padding-block: 14.6875rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+
+      @include bg-container;
+
+      background: url('../../assets/img/places/scribble_places_1.png') no-repeat
+        right 0 top 3.125rem;
+    }
+  }
+
+  &__img {
+    display: inline-block;
+    margin-block-end: 3.5625rem;
+
+    @include mq.media-breakpoint-between(xs, md) {
+      max-width: 3.3125rem;
+    }
+
+    @include mq.media-breakpoint-between(md, lg) {
+      max-width: 3.625rem;
+    }
+
+    @include mq.media-breakpoint-between(lg, xl) {
+      max-width: 3.9375rem;
+    }
+
+    @include mq.media-breakpoint-between(xl, xxl) {
+      max-width: 4.25rem;
+    }
+
+    @include mq.media-breakpoint-up(xxl) {
+      max-width: none;
+    }
+  }
+
+  &__title {
+    max-width: 50rem;
+    margin-inline: auto;
+
+    @include mq.media-breakpoint-between(xs, md) {
+      font-size: 3.75rem;
+    }
+
+    @include mq.media-breakpoint-between(md, lg) {
+      font-size: 4.375rem;
+    }
+
+    @include mq.media-breakpoint-between(lg, xl) {
+      font-size: 5rem;
+    }
+
+    @include mq.media-breakpoint-between(xl, xxl) {
+      font-size: 5.625rem;
+    }
+
+    @include mq.media-breakpoint-up(xxl) {
+      font-size: 6.25rem;
+    }
+
+    & > span {
+      position: relative;
+      display: inline-block;
+      font-style: italic;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 98%;
+        height: 5px;
+        transform: translateX(2px);
+        background-color: var(--clr-primary);
+      }
+    }
+  }
+
+  &__text {
+    font-weight: var(--fw-bold);
+    margin-block-start: 3.75rem;
+
+    @include mq.media-breakpoint-between(xs, md) {
+      font-size: 1rem;
+    }
+
+    @include mq.media-breakpoint-between(md, lg) {
+      font-size: 1.125rem;
+    }
+
+    @include mq.media-breakpoint-between(lg, xl) {
+      font-size: 1.25rem;
+    }
+
+    @include mq.media-breakpoint-between(xl, xxl) {
+      font-size: 1.375rem;
+    }
+
+    @include mq.media-breakpoint-up(xxl) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__story {
+    display: grid;
+    text-align: left;
+
+    @include mq.media-breakpoint-between(xs, md) {
+      padding-block-start: 6.25rem;
+    }
+
+    @include mq.media-breakpoint-between(md, xl) {
+      padding-block-start: 7.8125rem;
+    }
+
+    @include mq.media-breakpoint-up(xl) {
+      grid-template-columns: min(100%, 35.25rem) 1fr;
+      gap: 2.6875rem;
+      padding-block-start: 9.5625rem;
+    }
+
+    &-img-box {
+      position: relative;
+
+      @include mq.media-breakpoint-between(xs, xl) {
+        display: none;
+      }
+    }
+
+    &-img-decor {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -53%);
+    }
+
+    &-content {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+
+      @include mq.media-breakpoint-between(xs, md) {
+        row-gap: 1.75rem;
+        column-gap: 1.3125rem;
+      }
+
+      @include mq.media-breakpoint-between(md, xl) {
+        row-gap: 2.375rem;
+        column-gap: 1.9375rem;
+      }
+
+      @include mq.media-breakpoint-up(xl) {
+        row-gap: 3rem;
+        column-gap: 2.5625rem;
+      }
+    }
+
+    &-img-small {
+      @include mq.media-breakpoint-between(xs, md) {
+        grid-column: 1/10;
+      }
+
+      @include mq.media-breakpoint-between(md, lg) {
+        grid-row: 2/4;
+      }
+
+      @include mq.media-breakpoint-between(md, xl) {
+        grid-column: 1/5;
+      }
+
+      @include mq.media-breakpoint-between(lg, xl) {
+        grid-row: 1/4;
+        justify-self: end;
+      }
+
+      @include mq.media-breakpoint-up(xl) {
+        grid-column: 1/8;
+      }
+    }
+
+    &-title {
+      font-family: var(--ff-heading);
+      font-weight: var(--fw-bold);
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      line-height: 1.37;
+
+      @include mq.media-breakpoint-between(xs, md) {
+        grid-column: 1/10;
+        font-size: 1.75rem;
+        max-width: 31.875rem;
+      }
+
+      @include mq.media-breakpoint-between(md, lg) {
+        grid-column: 1/8;
+        font-size: 2rem;
+      }
+
+      @include mq.media-breakpoint-between(md, xl) {
+        grid-row: 1/2;
+      }
+
+      @include mq.media-breakpoint-between(lg, xl) {
+        grid-column: 5/10;
+        font-size: 2rem;
+      }
+
+      @include mq.media-breakpoint-up(xl) {
+        grid-column: 1/5;
+        font-size: 2.2813rem;
+      }
+    }
+
+    &-text {
+      @include mq.media-breakpoint-between(xs, md) {
+        grid-column: 1/10;
+        max-width: 32.1875rem;
+      }
+
+      @include mq.media-breakpoint-up(md) {
+        grid-column: 5/10;
+      }
+
+      @include mq.media-breakpoint-between(lg, xl) {
+        grid-row: 2/3;
+      }
+
+      @include mq.media-breakpoint-up(xl) {
+        padding-block-start: 0.5rem;
+      }
+
+      & > p + p {
+        margin-block-start: 1.25rem;
+      }
+    }
+
+    &-link {
+      display: inline-block;
+      position: relative;
+      height: 3.125rem;
+      justify-self: end;
+      animation: yoyo-left-right 1s linear infinite;
+
+      &:hover {
+        animation: none;
+      }
+
+      @include mq.media-breakpoint-between(xs, md) {
+        grid-column: 1/8;
+      }
+
+      @include mq.media-breakpoint-between(md, lg) {
+        grid-column: 7/10;
+        align-self: start;
+      }
+
+      @include mq.media-breakpoint-between(xs, lg) {
+        width: 6.25rem;
+      }
+
+      @include mq.media-breakpoint-between(lg, xl) {
+        grid-column: 5/10;
+        grid-row: 3/4;
+        justify-self: end;
+        width: 7.5rem;
+      }
+
+      @include mq.media-breakpoint-up(xl) {
+        top: -30px;
+        grid-column: 7/10;
+        width: 8.75rem;
+      }
+
+      &-arrow {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 3px;
+        transform: translateY(-50%);
+        background-color: var(--clr-primary);
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 26%;
+          top: 0;
+          right: 0;
+          background-color: var(--clr-primary);
+          transform-origin: right center;
+        }
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}

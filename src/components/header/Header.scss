@@ -1,0 +1,30 @@
+header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  transition: padding-top 0.3s ease;
+
+  @include mq.media-breakpoint-between(xs, md) {
+    padding-top: 3.75rem;
+  }
+
+  @include mq.media-breakpoint-between(md, xl) {
+    padding-top: 2.4375rem;
+  }
+
+  @include mq.media-breakpoint-up(md) {
+    background-color: var(--clr-background);
+    width: 100%;
+    padding-bottom: 1.25rem;
+  }
+
+  @include mq.media-breakpoint-up(xl) {
+    padding-top: 4.75rem;
+  }
+
+  &.scrolled {
+    @include mq.media-breakpoint-up(md) {
+      padding-top: 1.25rem;
+    }
+  }
+}

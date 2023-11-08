@@ -1,0 +1,117 @@
+.hero {
+  @include mq.media-breakpoint-up(md) {
+    margin-block-start: 8.375rem;
+  }
+
+  &__container {
+    position: relative;
+    justify-content: space-between;
+
+    @include mq.media-breakpoint-between(xs, md) {
+      padding-block: 8.125rem 6.25rem;
+    }
+
+    @include mq.media-breakpoint-between(md, xl) {
+      gap: 3.75rem;
+      padding-block: 6.6875rem;
+    }
+
+    @include mq.media-breakpoint-up(xl) {
+      gap: 1.875rem;
+      padding-block: 6.6875rem 9.5625rem;
+    }
+
+    &::before {
+      content: '';
+
+      @include bg-container;
+
+      @include mq.media-breakpoint-between(xs, md) {
+        background: url(../../assets/img/hero/scribble_hero_1.png) no-repeat;
+        background-size: 18.75rem;
+        background-position: bottom -6.25rem left -9.375rem;
+      }
+
+      @include mq.media-breakpoint-up(md) {
+        background: url(../../assets/img/hero/scribble_hero_1.png) no-repeat,
+          url(../../assets/img/hero/scribble_hero_2.png) no-repeat;
+        background-position: left -12.5rem bottom -28.125rem,
+          bottom -4.6875rem right;
+      }
+
+      @include mq.media-breakpoint-up(xl) {
+        background-position: left bottom -21.875rem, bottom -4.6875rem right;
+      }
+    }
+
+    &::after {
+      @include mq.media-breakpoint-between(xs, md) {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: calc(50%);
+        transform: translateX(-50%) rotate(180deg);
+        background: url(../../assets/img/hero/scribble_hero_2.png) no-repeat;
+        background-size: 5rem;
+        background-position: bottom -8.125rem left 1.25rem;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__text-content {
+    @include mq.media-breakpoint-between(xs, md) {
+      max-width: 31.25rem;
+    }
+
+    @include mq.media-breakpoint-between(md, xl) {
+      margin-block-start: 1.875rem;
+      max-width: 26.25rem;
+      flex-shrink: 0;
+    }
+
+    @include mq.media-breakpoint-up(xl) {
+      flex-basis: 40%;
+    }
+  }
+
+  &__text {
+    margin-top: 1.125rem;
+
+    @include mq.media-breakpoint-between(md, xl) {
+      max-width: 25rem;
+    }
+  }
+
+  &__img {
+    @include mq.media-breakpoint-between(xs, md) {
+      display: none;
+    }
+
+    @include mq.media-breakpoint-up(md) {
+      flex-shrink: 0;
+    }
+
+    @include mq.media-breakpoint-up(xl) {
+      height: 100%;
+    }
+  }
+
+  &__cta {
+    @include cta;
+
+    @include mq.media-breakpoint-between(xs, md) {
+      margin-block-start: 1.5rem;
+    }
+
+    @include mq.media-breakpoint-between(md, xl) {
+      margin-block-start: 1.5rem;
+    }
+
+    @include mq.media-breakpoint-up(xl) {
+      padding: 0.67rem 3.625rem;
+    }
+  }
+}

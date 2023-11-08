@@ -1,0 +1,45 @@
+.destinations {
+  &__container {
+    position: relative;
+
+    &::before {
+      content: '';
+
+      @include bg-container;
+
+      background: url('../../assets/img/destinations/scribble_destination_1.png')
+          no-repeat,
+        url('../../assets/img/destinations/scribble_destination_2.png')
+          no-repeat;
+      background-position: top -0.9375rem left, right bottom;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    justify-items: center;
+    align-items: self-start;
+
+    @include mq.media-breakpoint-between(xs, xl) {
+      padding-block: 6.25rem;
+      gap: 6.25rem;
+    }
+
+    @include mq.media-breakpoint-between(md, xxl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq.media-breakpoint-up(xl) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mq.media-breakpoint-up(xl) {
+      padding-block: 10.375rem;
+      gap: 3.6875rem;
+    }
+  }
+
+  &::before {
+    @include bg-container;
+  }
+}

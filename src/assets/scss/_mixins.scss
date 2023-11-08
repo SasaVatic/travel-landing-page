@@ -1,0 +1,160 @@
+@use 'media-queries' as mq;
+
+%cta-bordered {
+  display: inline-block;
+  position: relative;
+  font-size: var(--fs-nav-links);
+  text-transform: capitalize;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 0.3125rem;
+  border-style: solid;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  @include mq.media-breakpoint-between(xs, md) {
+    font-size: 1.1rem;
+    padding: 0.5rem 1.25rem;
+    border-width: 0.1875rem;
+  }
+  
+  @include mq.media-breakpoint-between(md, xl) {
+    font-size: 1.2rem;
+    padding: 0.625rem 2.125rem;
+    border-width: 0.1875rem;
+  }
+  
+  @include mq.media-breakpoint-up(xl) {
+    font-size: 1.3125rem;
+    padding: 0.625rem 3.375rem;
+    border-width: 0.1875rem;
+  }
+
+  &:hover {
+    transform: scaleX(1) translate(-5px, 5px);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: 0;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+@mixin cta {
+  position: relative;
+  display: inline-block;
+  font-weight: 900;
+  text-transform: capitalize;
+  color: var(--clr-neutral-100);
+  background: linear-gradient(to right, var(--clr-primary), var(--clr-primary));
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top right;
+  border-radius: 0.3125rem;
+  transition: color 0.3s ease, transform 0.3s ease, background-size 0.3s ease;
+  overflow: hidden;
+
+  @include mq.media-breakpoint-between(xs, md) {
+    font-size: 1.1rem;
+    padding: 0.5rem 2.1875rem;
+  }
+
+  @include mq.media-breakpoint-between(md, xl) {
+    font-size: 1.2rem;
+    padding: 0.6rem 2.6rem;
+  }
+
+  @include mq.media-breakpoint-up(xl) {
+    font-size: 1.3125rem;
+    margin-top: 2.6875rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      var(--clr-neutral-900),
+      var(--clr-neutral-900)
+    );
+    transform-origin: 0;
+    transform: scaleX(0);
+    z-index: -1;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: var(--clr-primary);
+    background-size: 0% 100%;
+    transform: scaleX(1) translate(-5px, 5px);
+    box-shadow: 5px -5px 10px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+@mixin cta-bordered-dark {
+  @extend %cta-bordered;
+  color: var(--clr-primary);
+  background-color: transparent;
+  border-color: var(--clr-primary);
+
+  &:hover {
+    color: var(--clr-neutral-100);
+    box-shadow: 5px -5px 10px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  &::before {
+    background-color: var(--clr-primary);
+  }
+}
+
+@mixin cta-bordered-light {
+  @extend %cta-bordered;
+  color: var(--clr-neutral-100);
+  background-color: var;
+  border-color: var(--clr-neutral-100);
+
+  &:hover {
+    color: var(--clr-primary);
+    border-color: var(--clr-neutral-100);
+    box-shadow: 5px -5px 15px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  &::before {
+    background-color: var(--clr-neutral-100);
+  }
+}
+
+@mixin bg-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1;
+
+  @include mq.media-breakpoint-between(xs, xl) {
+    width: 100%;
+    left: 50%;
+  }
+
+  @include mq.media-breakpoint-up(xl) {
+    left: calc(50% + 0.5625rem);
+    width: calc(100% + 7.5rem * 2);
+  }
+}

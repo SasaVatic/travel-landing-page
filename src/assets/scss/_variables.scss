@@ -1,0 +1,38 @@
+@use "./media-queries" as mq;
+
+:root {
+  --clr-background: #eae8e8;
+  --clr-primary: #1e1e1e;
+  --clr-primary-rgb: 30, 30, 30;
+  --clr-neutral-100: #ffffff;
+  --clr-neutral-900: #c5c5c5;
+  --clr-nav-link: #9b999b;
+  --clr-nav-link-active: var(--clr-primary);
+
+  --ff-primary: "Lato", sans-serif;
+  --ff-heading: "Cardo", serif;
+
+  --fs-100: .8125rem;
+  --fs-200: .875rem;
+  --fs-300: .9375rem;
+  --fs-400: 1.0313rem;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --fs-nav-links: 1.5rem;
+}
+
+@include mq.media-breakpoint-between(md, xl) {
+  :root {
+    --fs-nav-links: 1.125rem;
+  }
+}
+
+@include mq.media-breakpoint-up(xl) {
+  :root {
+    --fs-nav-links: 1.3125rem;
+  }
+}

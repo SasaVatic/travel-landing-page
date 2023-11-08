@@ -1,0 +1,66 @@
+.cta-section {
+  text-align: center;
+  color: var(--clr-neutral-100);
+
+  &__container {
+    position: relative;
+
+    @include mq.media-breakpoint-between(xs, md) {
+      padding-block: 5rem;
+    }
+
+    @include mq.media-breakpoint-up(md) {
+      padding-block: 2.875rem 3.25rem;
+    }
+
+    &::before {
+      content: '';
+      background: url(../../assets/img/cta/scribble_cta_1.png) no-repeat,
+        url(../../assets/img/cta/scribble_cta_2.png) no-repeat;
+      background-color: var(--clr-primary);
+
+      @include bg-container;
+
+      @include mq.media-breakpoint-between(xs, md) {
+        background-position: top -6.25rem right -6.25rem,
+          bottom -1.25rem left -6.25rem;
+      }
+
+      @include mq.media-breakpoint-between(md, xl) {
+        background-position: top -1.875rem left -15.625rem,
+          bottom 0 right -12.5rem;
+      }
+
+      @include mq.media-breakpoint-up(xl) {
+        background-position: top 2.9375rem left 0, bottom 4rem right;
+      }
+    }
+  }
+
+  &__content-wrapper {
+    max-width: 30rem;
+    margin-inline: auto;
+  }
+
+  &__text {
+    @include mq.media-breakpoint-between(xs, xl) {
+      margin-block-start: 0.9375rem;
+    }
+
+    @include mq.media-breakpoint-up(xl) {
+      margin-block-start: 1.25rem;
+    }
+  }
+
+  &__cta {
+    @include cta-bordered-light;
+
+    @include mq.media-breakpoint-between(xs, md) {
+      margin-block-start: 1.875rem;
+    }
+
+    @include mq.media-breakpoint-up(md) {
+      margin-block-start: 2.5rem;
+    }
+  }
+}

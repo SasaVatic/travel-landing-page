@@ -1,0 +1,177 @@
+.navigation {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq.media-breakpoint-between(xs, md) {
+      position: fixed;
+      top: 0.625rem;
+      left: 0.625rem;
+      flex-direction: column;
+      justify-content: center;
+      width: calc(100% - 1.25rem);
+      height: calc(100% - 1.25rem);
+      text-align: center;
+      background-color: var(--clr-background);
+      box-shadow: 0 0 0 0.1875rem var(--clr-primary),
+        0 0 0 0.625rem var(--clr-neutral-100);
+      transform: translateX(calc(-100% - 1.25rem));
+      transition: transform 0.3s ease;
+      overflow: scroll;
+      z-index: 10;
+    }
+
+    @include mq.media-breakpoint-up(md) {
+      width: 100%;
+      align-items: center;
+    }
+  }
+
+  &__checkbox:checked ~ &__list {
+    transform: translateX(0);
+  }
+
+  &__item {
+    & + & {
+      @include mq.media-breakpoint-between(xs, md) {
+        margin-top: 1.875rem;
+      }
+
+      @include mq.media-breakpoint-between(md, xl) {
+        margin-left: 4.0625rem;
+      }
+
+      @include mq.media-breakpoint-up(xl) {
+        margin-left: 4.6875rem;
+      }
+    }
+
+    &-cta {
+      @include mq.media-breakpoint-between(xs, md) {
+        margin-top: 1.875rem;
+      }
+
+      @include mq.media-breakpoint-up(md) {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    font-size: var(--fs-nav-links);
+    color: var(--clr-nav-link);
+    transition: color 0.4s ease, font-weight 0.3s ease;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      box-sizing: content-box;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: linear-gradient(
+        to right,
+        var(--clr-primary) 0,
+        var(--clr-primary) 100%
+      );
+      background-size: 0 100%;
+      background-repeat: no-repeat;
+      z-index: -1;
+      transition: background-size 0.3s ease;
+
+      @include mq.media-breakpoint-between(xs, md) {
+        padding: 0.625rem 1.25rem;
+      }
+
+      @include mq.media-breakpoint-between(md, xl) {
+        padding: 0.3125rem 0.625rem;
+      }
+
+      @include mq.media-breakpoint-up(xl) {
+        padding: 0.3125rem 0.625rem;
+      }
+    }
+
+    &.active {
+      color: var(--clr-nav-link-active);
+      font-weight: var(--fw-bold);
+    }
+
+    &:hover,
+    &:hover.active {
+      font-weight: var(--fw-bold);
+      color: var(--clr-neutral-100);
+    }
+
+    &:hover::before,
+    &:hover.active::before {
+      background-size: 100% 100%;
+    }
+  }
+
+  &__cta {
+    @include cta-bordered-dark;
+  }
+
+  &__toggle {
+    @include mq.media-breakpoint-between(xs, md) {
+      position: fixed;
+      right: 5px;
+      top: 5px;
+      width: 25px;
+      height: 12px;
+      padding: 20px;
+      z-index: 11;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: calc(50% - 25px / 2);
+        top: 14px;
+        width: 25px;
+        height: 3px;
+        background-color: var(--clr-primary);
+        animation: animate-nav-btn-before-reverse 0.3s ease forwards;
+        transition: background-color 0.3s ease;
+      }
+      
+      &::after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 25px / 2);
+        bottom: 14px;
+        width: 25px;
+        height: 3px;
+        background-color: var(--clr-primary);
+        animation: animate-nav-btn-after-reverse 0.3s ease forwards;
+        transition: background-color 0.3s ease;
+      }
+    }
+
+    &.light:not(.menu-open) {
+      &::before,
+      &::after {
+        background-color: var(--clr-background);
+      }
+    }
+
+    @include mq.media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  &__checkbox:checked ~ &__toggle::before {
+    animation: animate-nav-btn-before 0.3s ease forwards;
+  }
+
+  &__checkbox:checked ~ &__toggle::after {
+    animation: animate-nav-btn-after 0.3s ease forwards;
+  }
+}

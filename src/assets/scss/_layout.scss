@@ -1,0 +1,22 @@
+@use './media-queries' as mq;
+
+.container {
+  max-width: 75rem;
+  margin: 0 auto;
+
+  @include mq.media-breakpoint-between(xs, md) {
+    padding: 0 1.25rem;
+  }
+
+  @include mq.media-breakpoint-between(md, xxl) {
+    padding: 0 1.875rem;
+  }
+
+  @include mq.media-breakpoint-up(xxl) {
+    padding: 0;
+  }
+}
+
+.row {
+  display: flex;
+}

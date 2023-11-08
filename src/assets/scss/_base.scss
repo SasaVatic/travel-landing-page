@@ -1,0 +1,15 @@
+@use "./media-queries" as mq;
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--clr-background);
+
+  &.menu-open {
+    @include mq.media-breakpoint-between(xs, md) {
+      overflow: hidden;
+    }
+  }
+}
