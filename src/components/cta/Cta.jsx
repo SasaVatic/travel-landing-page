@@ -35,6 +35,7 @@ export default function Cta() {
 
     return () => window.removeEventListener('scroll', scrollEvent);
   });
+
   return (
     <section className="cta-section" ref={ctaSectionElement}>
       <div className="container cta-section__container">

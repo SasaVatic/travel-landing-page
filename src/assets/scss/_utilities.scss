@@ -22,10 +22,14 @@
   }
 
   @include mq.media-breakpoint-between(md, xl) {
+    font-size: 3.4375rem;
+  }
+
+  @include mq.media-breakpoint-between(xl, xxl) {
     font-size: 4.0625rem;
   }
 
-  @include mq.media-breakpoint-up(xl) {
+  @include mq.media-breakpoint-up(xxl) {
     font-size: 5.3125rem;
   }
 }

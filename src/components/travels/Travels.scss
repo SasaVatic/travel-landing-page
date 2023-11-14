@@ -1,0 +1,59 @@
+.travels {
+  @include mq.media-breakpoint-between(xs, xl) {
+    padding-block: 6.25rem;
+  }
+
+  @include mq.media-breakpoint-up(lg) {
+    display: grid;
+    grid-template-columns: repeat(1fr, 12);
+  }
+
+  @include mq.media-breakpoint-up(xl) {
+    padding-block: 11.0625rem;
+  }
+
+  @include mq.media-breakpoint-between(lg, xl) {
+    column-gap: 45px;
+  }
+
+  @include mq.media-breakpoint-between(xl, xxl) {
+    column-gap: 55px;
+  }
+
+  @include mq.media-breakpoint-up(xxl) {
+    column-gap: 65px;
+  }
+
+  &__title {
+    grid-column: 1/6;
+    letter-spacing: -1.5px;
+
+    @include mq.media-breakpoint-between(xs, lg) {
+      max-width: 47.6875rem;
+    }
+  }
+
+  &__accordion {
+    align-self: end;
+    grid-column: 1/6;
+    margin-block-start: 5.75rem;
+
+    @include mq.media-breakpoint-between(xs, lg) {
+      max-width: 46.25rem;
+    }
+  }
+
+  &__img {
+    grid-column: 6/13;
+    grid-row: 1/3;
+    align-self: start;
+
+    @include mq.media-breakpoint-between(xs, lg) {
+      display: none;
+    }
+
+    @include mq.media-breakpoint-up(lg) {
+      transform: translateX(3.5%);
+    }
+  }
+}

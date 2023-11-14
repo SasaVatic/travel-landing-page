@@ -56,7 +56,7 @@ export default function Hero() {
     <section className="hero" ref={heroSection}>
       <div className="container row hero__container">
         <div className="hero__text-content" ref={heroTextContent}>
-          <h1 className="heading__primary fs-heading-primary fw-black">
+          <h1 className="heading__primary fs-heading-primary fw-bold">
             {heroData.heading}
           </h1>
           <p className="hero__text paragraph fs-base">{heroData.text}</p>
