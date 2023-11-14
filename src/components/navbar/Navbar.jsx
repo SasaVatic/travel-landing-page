@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import './Navbar.scss';
 
 export default function Navbar() {
@@ -43,6 +43,38 @@ export default function Navbar() {
       </a>
     </li>
   ));
+
+  useEffect(() => {
+    const sections = Array.from(
+      document.querySelectorAll('section > .container')
+    );
+    const rgbBg = 'rgb(30, 30, 30)';
+    let sectionBgColor;
+    let isNavToggleOver;
+
+    const darkSections = sections.filter((section) => {
+      sectionBgColor = getComputedStyle(section, '::before').getPropertyValue(
+        'background-color'
+      );
+      return sectionBgColor === rgbBg;
+    });
+
+    const scrollEvent = window.addEventListener('scroll', function () {
+      isNavToggleOver = darkSections.some(
+        (s) =>
+          s.getBoundingClientRect().top < 30 &&
+          s.getBoundingClientRect().bottom > 30
+      );
+
+      if (isNavToggleOver) {
+        navToggle.current.classList.add('light');
+      } else {
+        navToggle.current.classList.remove('light');
+      }
+    });
+
+    return () => window.removeEventListener('scroll', scrollEvent);
+  }, []);
 
   return (
     <nav className="navigation" aria-label="Main">
